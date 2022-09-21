@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CommentAdd</title>
+</head>
+<body>
+    <form method="post">
+        <input type="text" name="name" /><br />
+        <input type="text" name="email" /><br />
+        <textarea name="comment"></textarea><br />
+        <input type="submit" value="Gönder" />
+    </form>
+    <h1>YORUMLAR</h1>
+
+    @if (ViewBag.commnet != null)
+    {
+        foreach (var item in ViewBag.comment as string[])
+        {
+            <span>@item</span><hr />
+        }
+    }
+    @*<h2><strong>@ViewBag.name</strong></h2><hr />
+        <h3><strong>@ViewBag.email</strong></h3><hr />
+        <h4><strong> @Html.Raw(ViewBag.comment)</strong></h4><hr />*@
+</body>
+</html>
